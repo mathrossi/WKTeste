@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2021/09/24 08:57:16.000.831,=C:\Arquivos\DelphiProjetos\Unit1.pas</Transaction>
+    <Transaction>2021/09/24 08:59:04.000.927,C:\Arquivos\DelphiProjetos\Unit1.pas=C:\Arquivos\WKTeste\View\WK.View.Pedido.pas</Transaction>
+    <Transaction>2021/09/24 08:59:04.000.927,C:\Arquivos\DelphiProjetos\Unit1.dfm=C:\Arquivos\WKTeste\View\WK.View.Pedido.dfm</Transaction>
+    <Transaction>2021/09/24 08:59:26.000.844,C:\Arquivos\DelphiProjetos\Project1.dproj=C:\Arquivos\WKTeste\WK.dproj</Transaction>
+    <Transaction>2021/09/24 08:59:37.000.350,=C:\Arquivos\WKTeste\Unit1.pas</Transaction>
+    <Transaction>2021/09/24 09:20:55.000.276,=C:\Arquivos\WKTeste\Model\Entity\RM.Model.Entity.pas</Transaction>
+    <Transaction>2021/09/24 09:20:55.000.260,=C:\Arquivos\WKTeste\Model\Entity\RM.Model.Entity.Factory.pas</Transaction>
+    <Transaction>2021/09/24 09:20:55.000.267,=C:\Arquivos\WKTeste\Model\Entity\RM.Model.Entity.Interfaces.pas</Transaction>
+    <Transaction>2021/09/24 09:33:33.000.262,=C:\Arquivos\WKTeste\Model\Connection\RM.Model.Connection.Interfaces.pas</Transaction>
+    <Transaction>2021/09/24 09:33:33.000.233,=C:\Arquivos\WKTeste\Model\Connection\RM.Model.Connection.Factory.pas</Transaction>
+    <Transaction>2021/09/24 09:33:33.000.253,=C:\Arquivos\WKTeste\Model\Connection\RM.Model.Connection.Firedac.Query.pas</Transaction>
+    <Transaction>2021/09/24 09:33:33.000.243,=C:\Arquivos\WKTeste\Model\Connection\RM.Model.Connection.Firedac.Connection.pas</Transaction>
+    <Transaction>2021/09/24 10:07:19.000.159,=C:\Arquivos\WKTeste\Model\DAO\RM.DAO.Interfaces.pas</Transaction>
+    <Transaction>2021/09/24 10:07:19.000.169,=C:\Arquivos\WKTeste\Model\DAO\RM.DAO.pas</Transaction>
+    <Transaction>2021/09/24 10:22:48.000.611,=C:\Arquivos\WKTeste\Controller\RM.Controller.pas</Transaction>
+    <Transaction>2021/09/24 10:22:48.000.602,=C:\Arquivos\WKTeste\Controller\RM.Controller.Interfaces.pas</Transaction>
+    <Transaction>2021/09/24 12:24:44.210,=C:\Arquivos\WKTeste\Unit1.pas</Transaction>
+    <Transaction>2021/09/24 14:01:09.095,=C:\Arquivos\WKTeste\Controller\WK.Controller.Utils.pas</Transaction>
+  </Transactions>  <ProjectSortOrder AutoSort="0" SortType="0">
+    <File Path="Controller"/>
+    <File Path="Controller\WK.Controller.Interfaces.pas"/>
+    <File Path="Controller\WK.Controller.pas"/>
+    <File Path="Controller\WK.Controller.Utils.pas"/>
+    <File Path="Model"/>
+    <File Path="Model\Connection"/>
+    <File Path="Model\Connection\WK.Model.Connection.Factory.pas"/>
+    <File Path="Model\Connection\WK.Model.Connection.Firedac.Connection.pas"/>
+    <File Path="Model\Connection\WK.Model.Connection.Firedac.Query.pas"/>
+    <File Path="Model\Connection\WK.Model.Connection.Interfaces.pas"/>
+    <File Path="Model\DAO"/>
+    <File Path="Model\DAO\WK.DAO.Interfaces.pas"/>
+    <File Path="Model\DAO\WK.DAO.pas"/>
+    <File Path="Model\Entity"/>
+    <File Path="Model\Entity\WK.Model.Entity.Factory.pas"/>
+    <File Path="Model\Entity\WK.Model.Entity.Interfaces.pas"/>
+    <File Path="Model\Entity\WK.Model.Entity.pas"/>
+    <File Path="View"/>
+    <File Path="View\WK.View.Pedido.pas"/>
+    <File Path="View\WK.View.Pedido.dfm"/>
+  </ProjectSortOrder>
+</BorlandProject>

@@ -1,0 +1,93 @@
+CREATE USER 'matheus'@'localhost' IDENTIFIED BY 'rm045369';
+
+GRANT ALL PRIVILEGES ON wk_pedidos.* TO 'matheus'@'localhost';
+
+CREATE DATABASE wk_pedidos /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+
+CREATE TABLE wk_pedidos.clientes(
+ id bigint NOT NULL AUTO_INCREMENT,
+ nome varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+ cidade varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+ uf varchar(2) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+ PRIMARY KEY (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+CREATE TABLE wk_pedidos.produtos (
+ id bigint NOT NULL AUTO_INCREMENT,
+ descricao varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+ valor_venda double NOT NULL,
+ PRIMARY KEY (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+CREATE TABLE wk_pedidos.pedidos (
+ id bigint NOT NULL AUTO_INCREMENT,
+ cliente_id bigint NOT NULL,
+ data_emissao timestamp NOT NULL,
+ valor_total double NOT NULL,
+ PRIMARY KEY (id),
+ KEY fk_pedidos_clientes (cliente_id),
+ CONSTRAINT fk_pedidos_clientes FOREIGN KEY (cliente_id) REFERENCES clientes (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+CREATE TABLE wk_pedidos.pedidos_produtos (
+ id bigint NOT NULL AUTO_INCREMENT,
+ pedido_id bigint NOT NULL,
+ produto_id bigint NOT NULL,
+ quantidade double NOT NULL,
+ valor_unitario double NOT NULL,
+ valor_total double NOT NULL,
+ PRIMARY KEY (id),
+ KEY fk_pedidos_produtos_pedidos (pedido_id),
+ KEY fk_pedidos_produtos_produtos (produto_id),
+ CONSTRAINT fk_pedidos_produtos_pedidos FOREIGN KEY (pedido_id) REFERENCES pedidos (id) ON DELETE CASCADE,
+ CONSTRAINT fk_pedidos_produtos_produtos FOREIGN KEY (produto_id) REFERENCES produtos (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+INSERT INTO wk_pedidos.clientes (nome, cidade, uf) VALUES 
+('MATHEUS ROSSI', 'MONTE ALTO', 'SP'), 
+('SILMARA ROSSI', 'MONTE ALTO', 'SP'), 
+('JOAO SILVA', 'SAO PAULO', 'SP'), 
+('ITAMAR FERREIRA', 'FLORIANOPOLIS', 'SC'), 
+('JUCA PRETO', 'TAIUVA', 'SP'), 
+('LUCA OLIVEIRA', 'CURITIBA', 'PR'),
+('CAMILA SANTIAGO', 'BELO HORIZONTE', 'MG'), 
+('ANTONIO BORTOLUCCI', 'ARACAJU', 'SE'), 
+('MARIA VICTORIA TRINDADE', 'NATAL', 'RN'), 
+('MARIA AMALIA SANTOS', 'MONTE ALTO', 'SP'), 
+('RAMON ARTHUR SANTOS', 'MONTE ALTO', 'SP'), 
+('RAUL SANTOS', 'MONTE ALTO', 'SP'),
+('MAURO CUNHA', 'MONTE ALTO', 'SP'), 
+('MARCIA ROSSI', 'MONTE ALTO', 'SP'), 
+('ROSANGELA ROSSI', 'MONTE ALTO', 'SP'), 
+('JEREMIAS ROSSI', 'MONTE ALTO', 'SP'), 
+('MARCIO ROSSI', 'MONTE ALTO', 'SP'), 
+('SAMUEL ROSSI', 'MONTE ALTO', 'SP'),
+('SOLANGE ROSSI', 'MONTE ALTO', 'SP'), 
+('FLORIANO ROSSI', 'MONTE ALTO', 'SP'), 
+('MARIA THEREZINHA ROSSI', 'MONTE ALTO', 'SP'), 
+('ERASTO ROSSI', 'MONTE ALTO', 'SP'), 
+('MARIA FERNANDA ROSSI', 'MONTE ALTO', 'SP'), 
+('LUIS FERNANDO ROSSI', 'MONTE ALTO', 'SP');
+
+INSERT INTO wk_pedidos.produtos (descricao, valor_venda) VALUES 
+('MADEIRA', '10.00'),
+('PORTA', '80.00'),
+('PANELA', '115.84'),
+('LIMA DA PERSIA', '5.49'),
+('MANGA PALMER', '44.40'),
+('MESA DE JANTAR', '1459.99'),
+('GELADEIRA ELETROLUX', '3000.00'),
+('CERVEJA BUDWEISER', '3.89'),
+('COCA-COLA 2 LITROS', '5.29'),
+('AR CONDICIONADO', '6999.99'),
+('TOYOTA COROLLA XRS 2014', '66000.00'),
+('HONDA BIZ C100 ES', '5900.00'),
+('NOTEBOOK ACER CORE I5 8GB SSD 256', '3799.00'),
+('MONITOR AOC 23"', '500.00'),
+('CAFETEIRA ELETRICA', '211.00'),
+('FORNO MICROONDAS BRASTEMP 30 LITROS', '599.00'),
+('TORRADEIRA ELETRICA', '50.00'),
+('IMPRESSORA LASEJET SAMSUNG SCX4429FF', '1215.40'),
+('TECLADO SEM FIO', '100.00'),
+('LEITOR BIOMETRICO', '580.00');
